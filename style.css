@@ -10,6 +10,7 @@
   --bg-color: #111;
   --b-color: transparent;
   --b-shadow: #3bff41;
+  --border: rgba(0, 252, 0, 0.829);
 }
 
 .container span {
@@ -84,7 +85,7 @@
   animation-delay: 4s;
 }
 
-.box{
+.box {
   text-align: center;
 }
 
@@ -93,7 +94,7 @@
   -webkit-text-stroke-width: 3px;
   -webkit-text-stroke-color: var(--b-shadow);
   font-family: montserrat;
-  font-size: 70px;
+  font-size: 60px;
   text-transform: uppercase;
   letter-spacing: 12px;
 }
@@ -134,6 +135,9 @@ body {
 
 .game-details {
   color: rgb(59, 224, 44);
+  border: 5px solid var(--border);
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
   display: flex;
   justify-content: space-between;
   padding: 20px 27px;
@@ -152,6 +156,8 @@ body {
   -webkit-text-fill-color: transparent;
   border: 10px solid rgba(0, 252, 0, 0.829);
   border-radius: 15px;
+  border-top-left-radius: 0%;
+  border-top-right-radius: 0%;
 }
 
 .play-board .food {
@@ -160,10 +166,10 @@ body {
 }
 
 .play-board .head {
-  border: 4px solid var(--b-shadow);
-  border-bottom-right-radius: 25%;
-  border-bottom-left-radius: 25%;
-  border-top-left-radius: 25%;
+  background: var(--b-shadow);
+  border-bottom-right-radius: 20%;
+  border-bottom-left-radius: 20%;
+  border-top-left-radius: 20%;
   border-top-right-radius: 25%;
 }
 
@@ -184,9 +190,21 @@ body {
 }
 
 @media screen and (max-width: 800px) {
+
+  .box,
   .wrapper {
     width: 90vmin;
     height: 115vmin;
+  }
+
+  .content h2 b {
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke-width: 3px;
+    -webkit-text-stroke-color: var(--b-shadow);
+    font-family: montserrat;
+    font-size: 50px;
+    text-transform: uppercase;
+    letter-spacing: 12px;
   }
 
   .game-details {
@@ -215,11 +233,11 @@ body {
       transform: translateY(0);
       opacity: 1;
     }
-  
+
     80% {
       opacity: .7;
     }
-  
+
     100% {
       transform: translateY(-1200px) rotate(360deg);
       opacity: 0;
